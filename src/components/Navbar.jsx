@@ -27,20 +27,23 @@ const Navbar = () => {
         </Link>
         
         {/* Desktop Nav Links */}
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
+        <ul className='list-none hidden sm:flex flex-row gap-5'>
           {navLinks.map((nav) => (
             <li
               key={nav.id}
               className={`${
-                active === nav.title ? 'text-white' : 'text-black'
-              } hover:text-red-500 text-[18px] font-medium cursor-pointer`}
+                active === nav.title ? 'text-black' : 'text-black'
+              } hover:bg-green-500 hover:text-white text-[18px] font-medium cursor-pointer px-3 py-2 rounded-md transition-all duration-300`}
               onClick={() => setActive(nav.title)}
             >
               {/* Change <a> to <Link> for page navigation */}
-              <Link to={`/${nav.id}`}>{nav.title}</Link>
+              <Link to={`/${nav.id}`}>
+                {nav.title}
+              </Link>
             </li>
           ))}
         </ul>
+
 
         {/* Mobile Menu */}
         <div className='sm:hidden flex flex-1 justify-end items-center'>

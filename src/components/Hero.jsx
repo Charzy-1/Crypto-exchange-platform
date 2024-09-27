@@ -27,7 +27,7 @@ const Hero = () => {
         <p>Supports 30+</p>
 
         {/* Container for technology icons, using flexbox for layout */}
-      <div className="flex flex-row flex-wrap justify-center gap-5 mt-5">
+      <div className="flex flex-row flex-wrap justify-center gap-5 mt-3 mb-2">
         {/* Mapping over the technologies array to create a BallCanvas for each technology */}
         {/* Supported Coins (Icons) */}
         {technologies.map((technology) => (
@@ -38,12 +38,31 @@ const Hero = () => {
       </div>
       
         {/* App Store Buttons */}
-        <div className='flex justify-center items-center gap-4 mt-10'>
-          <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
-            <img src='/path-to-google-play-badge.png' alt="Google Play" className="w-[150px] h-auto" />
+        <div className='flex flex-col sm:flex-row justify-center items-center gap-4 mt-5'>
+          <a 
+            href="https://play.google.com/store" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-start bg-red-600 text-white px-4 py-2 sm:px-5 sm:py-3 rounded-lg shadow-lg hover:bg-gray-800 transition duration-300 w-full sm:w-auto"
+          >
+            <img src='./public/images/Google.png' alt="Google Play" className="w-8 h-8 sm:w-12 sm:h-12 mr-3" />
+            <div className="text-left">
+              <span className="text-xs sm:text-sm block">Get it on</span>
+              <span className="text-base sm:text-lg font-bold">Google Play</span>
+            </div>
           </a>
-          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer">
-            <img src='/path-to-apple-store-badge.png' alt="App Store" className="w-[150px] h-auto" />
+
+          <a 
+            href="https://apps.apple.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-start bg-red-600 text-white px-4 py-2 sm:px-5 sm:py-3 rounded-lg shadow-lg hover:bg-gray-800 transition duration-300 w-full sm:w-auto"
+          >
+            <img src='./public/images/Apple.png' alt="App Store" className="w-8 h-8 sm:w-12 sm:h-12 mr-3" />
+            <div className="text-left">
+              <span className="text-xs sm:text-sm block">Download on the</span>
+              <span className="text-base sm:text-lg font-bold">App Store</span>
+            </div>
           </a>
         </div>
       </div>
@@ -57,7 +76,7 @@ const Hero = () => {
         rel="noopener noreferrer"
         className="absolute bottom-8 right-8 bg-green-500 text-white p-4 rounded-full"
       >
-        <img src='/path-to-whatsapp-icon.png' alt="WhatsApp" className="w-10 h-10" />
+        <img src='./public/images/WhatsApp.png' alt="WhatsApp" className="w-10 h-10" />
       </a>
     </section>
   );
