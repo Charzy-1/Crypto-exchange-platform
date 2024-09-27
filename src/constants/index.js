@@ -1,8 +1,4 @@
 import {
-  mobile,
-  backend,
-  grafiks,
-  web,
   bitcoin,
   Tether,
   Ether,
@@ -29,25 +25,6 @@ export const navLinks = [
   {
     id: "contact",
     title: "Contact",
-  },
-];
-
-const services = [
-  {
-    title: "Web Developer",
-    icon: web,
-  },
-  {
-    title: "React Native Developer",
-    icon: mobile,
-  },
-  {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "Graphics Designer",
-    icon: grafiks,
   },
 ];
 
@@ -189,4 +166,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, testimonials, projects };
+export { technologies, testimonials, projects };
