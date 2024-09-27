@@ -21,7 +21,7 @@ const Hero = () => {
         <h1 className='text-white font-bold text-[70px]'>
           Fast and Trusted
         </h1>
-        <p className='text-white text-[24px] max-w-xl'>
+        <p className='text-white text-[24px] max-w-xl lg:max-w-4xl'>
           The most trustworthy cryptocurrency exchange platform available. Where you can have quick access to your money whenever you desire.
         </p>
         <p>Supports 30+</p>
