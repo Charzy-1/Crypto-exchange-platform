@@ -1,24 +1,23 @@
-// import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { BallCanvas } from "./canvas";
 import { technologies } from "../constants";
 
 const Hero = () => {
   return (
-    <section className={`relative w-full h-screen mx-auto`}>
+    <section className="relative w-full mx-auto pt-10 pb-20">
       {/* Background Image */}
       <div 
-            className='absolute inset-0 bg-cover bg-center' 
-            style={{ backgroundImage: 'url(../public/images/bacground.png)' }} 
-        />
-        {/* Dimming Overlay */}
-        <div className='absolute inset-0 bg-black opacity-60' /> {/* Adjust opacity as needed */}
+        className='absolute inset-0 bg-cover bg-center h-full w-full' 
+        style={{ backgroundImage: 'url(../public/images/bacground.png)' }} 
+      />
+      {/* Dimming Overlay */}
+      <div className='absolute inset-0 bg-black opacity-60 h-full w-full' /> {/* Ensures overlay covers the entire section */}
 
       {/* Content Container */}
-      <div className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-col items-center text-center gap-5`}>
+      <div className={`${styles.paddingX} relative top-0 max-w-7xl mx-auto flex flex-col items-center text-center gap-5`}>
         
         {/* Hero Text */}
-        <h1 className='text-white font-bold text-[70px] sm:text-[50px] xs:text-[40px] leading-tight sm:leading-none'>
+        <h1 className='text-white font-bold text-[70px] sm:text-[50px] xs:text-[40px] leading-tight sm:leading-none pt-20'>
           Fast and Trusted
         </h1>
 
@@ -28,15 +27,13 @@ const Hero = () => {
         <p>Supports 30+</p>
 
         {/* Container for technology icons, using flexbox for layout */}
-      <div className="flex flex-row flex-wrap justify-center gap-5 mt-3 mb-2">
-        {/* Mapping over the technologies array to create a BallCanvas for each technology */}
-        {/* Supported Coins (Icons) */}
-        {technologies.map((technology) => (
-          <div className="w-28 h-28" key={technology.name}> {/* Unique key for each mapped item */}
-            <BallCanvas icon={technology.icon} /> {/* Rendering the BallCanvas with the technology icon */}
-          </div>
-        ))}
-      </div>
+        <div className="flex flex-row flex-wrap justify-center gap-5 mt-3 mb-2">
+          {technologies.map((technology) => (
+            <div className="w-28 h-28" key={technology.name}>
+              <BallCanvas icon={technology.icon} />
+            </div>
+          ))}
+        </div>
       
         {/* App Store Buttons */}
         <div className='flex flex-col sm:flex-row justify-center items-center gap-4 mt-5'>
@@ -67,8 +64,6 @@ const Hero = () => {
           </a>
         </div>
       </div>
-
-
 
       {/* WhatsApp Floating Icon */}
       <a

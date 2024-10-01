@@ -47,27 +47,22 @@ const technologies = [
 const testimonials = [
   {
     testimonial:
-      "Exchange Gift Cards and Crypto in a Different Perspective",
-    name: "Pamphile MKP",
-    designation: "TRCN",
-    company: "Chill Academy",
-    image: "https://avatars.githubusercontent.com/u/98436409?v=4",
+      "Exchange Gift Cards and Crypto in a Different Perspectivel with Big Leo",
+    name: "Mark",
+    image: "	https://swiftpaymobile.com/landing/img/t5.png",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Charles does.",
-    name: "Basit Ali",
-    designation: "PKSTN",
-    company: "DRC 145",
-    image: "https://avatars.githubusercontent.com/u/63063973?v=4",
+      "Reliable, responsible, trustworthy & swift platform. I'm glad it's been working as expected, great platform, well done Leo'sexchange.",
+    name: "Jared",
+    designation: "of ABK",
+    image: "	https://swiftpaymobile.com/landing/img/t4.png",
   },
   {
     testimonial:
-      "After Charles optimized our website, our traffic increased by 50%. We can't thank him enough!",
-    name: "Gabriel Aghogho",
-    designation: "TRCN",
-    company: "Ciddi Mutfak",
-    image: "https://pbs.twimg.com/media/FqJ8a-CXgAUiUNF.jpg",
+      "Quick response and good rate! He's honest and he's one person you can trust 100! Trade with Leo",
+    name: "Maxwell",
+    image: "	https://swiftpaymobile.com/landing/img/t1.jpg",
   },
 ];
 
