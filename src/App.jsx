@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 
-import { TrustUsSection, Feedbacks, Hero,  Navbar } from "./components";
+import { TrustUsSection, Feedbacks, Hero,  Navbar, HowItWorks } from "./components";
 
 
 const App = () => {
@@ -13,6 +13,7 @@ const App = () => {
         </div>
         <TrustUsSection />
         <Feedbacks />
+        <HowItWorks />
       </div>
     </BrowserRouter>
    

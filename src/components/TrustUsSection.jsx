@@ -1,7 +1,7 @@
 import { SectionWrapper } from "../hoc"; // Importing a higher-order component to wrap the Tech component
 import { motion } from 'framer-motion'; // Importing motion for animations using Framer Motion
-import { styles } from '../styles'; // Importing styles for the component
-import { fadeIn, textVariant } from '../utils/motion'; // Importing motion utilities
+
+import { textVariant } from '../utils/motion'; // Importing motion utilities
 
 const TrustUsSection = () => {
     return (

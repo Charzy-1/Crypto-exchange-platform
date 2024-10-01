@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom"; // Use Link from react-router-dom
-
 import { styles } from '../styles';
 import { navLinks } from '../constants';
 import { logo, menu, close } from "../assets";
@@ -8,9 +7,45 @@ import { logo, menu, close } from "../assets";
 const Navbar = () => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [navbarBackground, setNavbarBackground] = useState(false); // Track background change
+
+  // Handle navbar visibility and background color on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Hide navbar when scrolling down, show it when scrolling up
+      if (currentScrollY > lastScrollY) {
+        setShowNavbar(false);
+      } else {
+        setShowNavbar(true);
+      }
+
+      // Add grayscale background when not at the top
+      if (currentScrollY > 0) {
+        setNavbarBackground(true);
+      } else {
+        setNavbarBackground(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
 
   return (
-    <div className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-white`}>
+    <div
+      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 transition-transform duration-500 ${
+        showNavbar ? 'translate-y-0' : '-translate-y-full'
+      } ${navbarBackground ? 'bg-gray-500 bg-opacity-50 backdrop-blur-md' : 'bg-transparent'} transition-colors duration-500`}
+    >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto text-primary'>
         <Link
           to='/'
@@ -22,28 +57,26 @@ const Navbar = () => {
         >
           <img src={logo} alt='company logo' className='w-10 h-10 object-contain' loading='lazy' />
           <p className='text-green-500 text-[20px] font-bold cursor-pointer flex'>
-          | &nbsp; Leo'sExchange &nbsp; <span className='sm:block hidden'></span>
+            | &nbsp; Leo'sExchange &nbsp; <span className='sm:block hidden'></span>
           </p>
         </Link>
-        
+
         {/* Desktop Nav Links */}
         <ul className='list-none hidden sm:flex flex-row gap-5'>
           {navLinks.map((nav) => (
             <li
               key={nav.id}
               className={`${
-                active === nav.title ? 'text-black' : 'text-black'
+                active === nav.title ? 'text-black' : 'text-white'
               } hover:bg-green-500 hover:text-white text-[18px] font-medium cursor-pointer px-3 py-2 rounded-md transition-all duration-300`}
               onClick={() => setActive(nav.title)}
             >
-              {/* Change <a> to <Link> for page navigation */}
               <Link to={`/${nav.id}`}>
                 {nav.title}
               </Link>
             </li>
           ))}
         </ul>
-
 
         {/* Mobile Menu */}
         <div className='sm:hidden flex flex-1 justify-end items-center'>
@@ -71,7 +104,6 @@ const Navbar = () => {
                     setActive(nav.title);
                   }}
                 >
-                  {/* Change <a> to <Link> for page navigation */}
                   <Link to={`/${nav.id}`}>{nav.title}</Link>
                 </li>
               ))}
