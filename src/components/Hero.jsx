@@ -8,7 +8,7 @@ const Hero = () => {
       {/* Background Image */}
       <div 
         className='absolute inset-0 bg-cover bg-center h-full w-full' 
-        style={{ backgroundImage: 'url(../public/images/bacground.png)' }} 
+        style={{ backgroundImage: `url(/images/bacground.png)` }} 
       />
       {/* Dimming Overlay */}
       <div className='absolute inset-0 bg-black opacity-60 h-full w-full' /> {/* Ensures overlay covers the entire section */}
@@ -24,7 +24,7 @@ const Hero = () => {
         <p className='text-white text-[24px] max-w-xl lg:max-w-4xl'>
           The most trustworthy cryptocurrency exchange platform available. Where you can have quick access to your money whenever you desire.
         </p>
-        <p>Supports 30+</p>
+        <p className='text-white'>Supports 30+</p>
 
         {/* Container for technology icons, using flexbox for layout */}
         <div className="flex flex-row flex-wrap justify-center gap-5 mt-3 mb-2">
@@ -43,7 +43,7 @@ const Hero = () => {
             rel="noopener noreferrer"
             className="flex items-start bg-red-600 text-white px-4 py-2 sm:px-5 sm:py-3 rounded-lg shadow-lg hover:bg-gray-800 transition duration-300 w-full sm:w-auto"
           >
-            <img src='./public/images/Google.png' alt="Google Play" className="w-8 h-8 sm:w-12 sm:h-12 mr-3" />
+            <img src='/images/Google.png' alt="Google Play" className="w-8 h-8 sm:w-12 sm:h-12 mr-3" />
             <div className="text-left">
               <span className="text-xs sm:text-sm block">Get it on</span>
               <span className="text-base sm:text-lg font-bold">Google Play</span>
@@ -56,7 +56,7 @@ const Hero = () => {
             rel="noopener noreferrer"
             className="flex items-start bg-red-600 text-white px-4 py-2 sm:px-5 sm:py-3 rounded-lg shadow-lg hover:bg-gray-800 transition duration-300 w-full sm:w-auto"
           >
-            <img src='./public/images/Apple.png' alt="App Store" className="w-8 h-8 sm:w-12 sm:h-12 mr-3" />
+            <img src='/images/Apple.png' alt="App Store" className="w-8 h-8 sm:w-12 sm:h-12 mr-3" />
             <div className="text-left">
               <span className="text-xs sm:text-sm block">Download on the</span>
               <span className="text-base sm:text-lg font-bold">App Store</span>
@@ -72,7 +72,7 @@ const Hero = () => {
         rel="noopener noreferrer"
         className="fixed z-10 bottom-8 right-8 bg-green-500 text-white p-4 rounded-full"
       >
-        <img src='./public/images/WhatsApp.png' alt="WhatsApp" className="w-10 h-10" />
+        <img src='/images/WhatsApp.png' alt="WhatsApp" className="w-10 h-10" />
       </a>
     </section>
   );
