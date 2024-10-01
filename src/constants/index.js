@@ -3,10 +3,6 @@ import {
   Tether,
   Ether,
   Us,
-  carrent,
-  calculator,
-  jobit,
-  tripguide,
 } from "../assets";
 
 export const navLinks = [
@@ -51,7 +47,7 @@ const technologies = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Charles proved me wrong.",
+      "Exchange Gift Cards and Crypto in a Different Perspective",
     name: "Pamphile MKP",
     designation: "TRCN",
     company: "Chill Academy",
@@ -75,95 +71,4 @@ const testimonials = [
   },
 ];
 
-const projects = [
-  {
-    name: "Crypto market tracker",
-    description:
-      "Web-based platform that allows users to fetch data from coinllore crypto API, lists the metrics by coin name and displays additional information when clicked on a coin link.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: carrent,
-    source_code_link: "https://github.com/Charzy-1/React-capstone-project",
-    live_demo_link: 'https://66e493a11d296b6c9784521d--leosex.netlify.app/',
-  },
-  {
-    name: "SpaceX-Mission-App",
-    description:
-      "SpaceX-mission-app is a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/Charzy-1/SpaceX-Mission-App",
-    live_demo_link: 'https://spacexmission-app.netlify.app/',
-  },
-  {
-    name: "Math Wizard",
-    description:
-      "Math-Wizard is a web app for all lovers of mathematics. It is a Single Page Application (SPA) that allows users to make simple calculations and read a random math-related quotes.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: calculator,
-    source_code_link: "https://github.com/Charzy-1/Math-wizard-app",
-    live_demo_link: 'https://66c72eb234e70410b003a82e--benevolent-alfajores-7f3c32.netlify.app/',
-  },
-  {
-    name: "HFM Market promotions",
-    description:
-      "This project designed to flex my muscle in using CSS for better user experience. It is a webpage designed to publicize an online trading seminar organized in Lagos, Nigeria. It was completed with just html and CSS.",
-    tags: [
-      {
-        name: "HTML",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "HTML",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: tripguide,
-    source_code_link: "https://github.com/Charzy-1/HTML-CSS-JavaScript-capstone-project",
-    live_demo_link: 'https://charzy-1.github.io/HTML-CSS-JavaScript-capstone-project/',
-  },
-];
-
-export { technologies, testimonials, projects };
+export { technologies, testimonials };

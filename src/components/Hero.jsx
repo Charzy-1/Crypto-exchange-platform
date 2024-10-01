@@ -18,9 +18,10 @@ const Hero = () => {
       <div className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-col items-center text-center gap-5`}>
         
         {/* Hero Text */}
-        <h1 className='text-white font-bold text-[70px]'>
+        <h1 className='text-white font-bold text-[70px] sm:text-[50px] xs:text-[40px] leading-tight sm:leading-none'>
           Fast and Trusted
         </h1>
+
         <p className='text-white text-[24px] max-w-xl lg:max-w-4xl'>
           The most trustworthy cryptocurrency exchange platform available. Where you can have quick access to your money whenever you desire.
         </p>
