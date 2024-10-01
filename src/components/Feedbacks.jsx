@@ -5,7 +5,7 @@ import { styles } from '../styles';
 import { testimonials } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 
-const FeedbackCard = ({ index, testimonial, name, designation, company, image}) => (
+const FeedbackCard = ({ index, testimonial, name, image}) => (
   
   <motion.div
   variants={fadeIn('', 'spring', index * 0.5, 0.75)}

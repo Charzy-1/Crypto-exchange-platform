@@ -11,11 +11,6 @@ import Us from "./tech/Us.png";
 
 import chill from "./company/chill.png";
 
-import carrent from "./carrent.png";
-import calculator from "./calculator.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
-
 export {
   logo,
   github,
@@ -26,8 +21,4 @@ export {
   Ether,
   Us,
   chill,
-  calculator,
-  carrent,
-  jobit,
-  tripguide,
 };
