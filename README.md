@@ -27,7 +27,7 @@ This crypto exchange platform is designed to facilitate the buying, selling, and
 Check out the live version [here](https://charlesadikankwu.netlify.app/).
 
 ## Project Screenshot
-![screenshot](./public/images/Screenshot.jpg)
+![screenshot](./public/images/Screenshot.jpeg)
 
 ## Setup
 
