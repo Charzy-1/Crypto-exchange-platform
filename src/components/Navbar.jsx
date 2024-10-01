@@ -42,23 +42,15 @@ const Navbar = () => {
 
   return (
     <div
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 transition-transform duration-500 ${
-        showNavbar ? 'translate-y-0' : '-translate-y-full'
-      } ${navbarBackground ? 'bg-gray-500 bg-opacity-50 backdrop-blur-md' : 'bg-transparent'} transition-colors duration-500`}
+      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 transition-transform duration-500 ${showNavbar ? 'translate-y-0' : '-translate-y-full'} ${navbarBackground ? 'bg-gray-500 bg-opacity-50 backdrop-blur-md' : 'bg-transparent'} transition-colors duration-500`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto text-primary'>
         <Link
           to='/'
           className='flex items-center gap-2'
-          onClick={() => {
-            setActive('');
-            window.scrollTo(0, 0); // Scroll to top when clicking the logo
-          }}
         >
-          <img src={logo} alt='company logo' className='w-10 h-10 object-contain' loading='lazy' />
-          <p className='text-green-500 text-[20px] font-bold cursor-pointer flex'>
-            | &nbsp; Leo'sExchange &nbsp; <span className='sm:block hidden'></span>
-          </p>
+          <img src={logo} alt='company logo' className='w-13 h-12 object-contain' loading='lazy' />
+          <p className='text-green-500 text-[20px] font-bold flex'>Leo'sExchange &nbsp; <span className='sm:block hidden'></span></p>
         </Link>
 
         {/* Desktop Nav Links */}
@@ -67,11 +59,29 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`${
-                active === nav.title ? 'text-black' : 'text-white'
+                active === nav.title ? 'text-white' : 'text-white'
               } hover:bg-green-500 hover:text-white text-[18px] font-medium cursor-pointer px-3 py-2 rounded-md transition-all duration-300`}
-              onClick={() => setActive(nav.title)}
+              onClick={() => {
+                if (nav.id === "home") {
+                  setActive(nav.title);
+                  window.scrollTo(0, 0); // Scroll to top when clicking Home
+                } else if (nav.id === "contact") {
+                  setActive(nav.title);
+                  document.getElementById("contact").scrollIntoView({ behavior: "smooth" }); // Scroll to contact section
+                } else {
+                  setActive(nav.title);
+                }
+              }}
             >
-              <Link to={`/${nav.id}`}>
+              <Link to={nav.id === "home" ? "#" : (nav.id === "contact" ? "#" : `/${nav.id}`)} onClick={() => {
+                if (nav.id === "home") {
+                  setActive(nav.title);
+                  window.scrollTo(0, 0); // Scroll to top when clicking Home
+                } else if (nav.id === "contact") {
+                  setActive(nav.title);
+                  document.getElementById("contact").scrollIntoView({ behavior: "smooth" }); // Scroll to contact section
+                }
+              }}>
                 {nav.title}
               </Link>
             </li>
@@ -87,11 +97,9 @@ const Navbar = () => {
             onClick={() => setToggle(!toggle)}
           />
 
-          <div
-            className={`${
-              !toggle ? 'hidden' : 'flex'
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
-          >
+          <div className={`${
+            !toggle ? 'hidden' : 'flex'
+          } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}>
             <ul className='list-none flex justify-end items-start flex-col gap-4'>
               {navLinks.map((nav) => (
                 <li
@@ -100,11 +108,32 @@ const Navbar = () => {
                     active === nav.title ? 'text-white' : 'text-secondary'
                   } font-poppins font-medium cursor-pointer text-[16px]`}
                   onClick={() => {
-                    setToggle(false);
-                    setActive(nav.title);
+                    if (nav.id === "home") {
+                      setActive(nav.title);
+                      window.scrollTo(0, 0); // Scroll to top when clicking Home
+                    } else if (nav.id === "contact") {
+                      setActive(nav.title);
+                      document.getElementById("contact").scrollIntoView({ behavior: "smooth" }); // Scroll to contact section
+                    } else {
+                      setToggle(false);
+                      setActive(nav.title);
+                    }
                   }}
                 >
-                  <Link to={`/${nav.id}`}>{nav.title}</Link>
+                  <Link to={nav.id === "home" ? "#" : (nav.id === "contact" ? "#" : `/${nav.id}`)} onClick={() => {
+                    if (nav.id === "home") {
+                      setActive(nav.title);
+                      window.scrollTo(0, 0); // Scroll to top when clicking Home
+                    } else if (nav.id === "contact") {
+                      setActive(nav.title);
+                      document.getElementById("contact").scrollIntoView({ behavior: "smooth" }); // Scroll to contact section
+                    } else {
+                      setToggle(false);
+                      setActive(nav.title);
+                    }
+                  }}>
+                    {nav.title}
+                  </Link>
                 </li>
               ))}
             </ul>

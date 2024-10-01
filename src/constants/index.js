@@ -3,6 +3,9 @@ import {
   Tether,
   Ether,
   Us,
+  FaWhatsapp, 
+  FaFacebook, 
+  FaInstagram,
 } from "../assets";
 
 export const navLinks = [
@@ -11,12 +14,12 @@ export const navLinks = [
     title: "Home",
   },
   {
-    id: "rate",
-    title: "Rate",
-  },
-  {
     id: "about",
     title: "About",
+  },
+  {
+    id: "rate",
+    title: "Rate",
   },
   {
     id: "contact",
@@ -47,23 +50,41 @@ const technologies = [
 const testimonials = [
   {
     testimonial:
-      "Exchange Gift Cards and Crypto in a Different Perspectivel with Big Leo",
+      "Exchange Gift Cards and Crypto in a Different Perspective with Big Leo",
     name: "Mark",
-    image: "	https://swiftpaymobile.com/landing/img/t5.png",
+    image: "https://swiftpaymobile.com/landing/img/t5.png", // Fixed leading spaces
   },
   {
     testimonial:
       "Reliable, responsible, trustworthy & swift platform. I'm glad it's been working as expected, great platform, well done Leo'sexchange.",
     name: "Jared",
     designation: "of ABK",
-    image: "	https://swiftpaymobile.com/landing/img/t4.png",
+    image: "https://swiftpaymobile.com/landing/img/t4.png", // Fixed leading spaces
   },
   {
     testimonial:
-      "Quick response and good rate! He's honest and he's one person you can trust 100! Trade with Leo",
+      "Quick response and good rate! He's honest and he's one person you can trust 100%! Trade with Leo",
     name: "Maxwell",
-    image: "	https://swiftpaymobile.com/landing/img/t1.jpg",
+    image: "https://swiftpaymobile.com/landing/img/t1.jpg", // Fixed leading spaces
   },
 ];
 
-export { technologies, testimonials };
+const socialLinks = [
+  {
+    name: 'WhatsApp',
+    icon: FaWhatsapp, // Reference to the WhatsApp PNG icon
+    url: 'https://wa.me/your-whatsapp-number', // Replace with the correct link
+  },
+  {
+    name: 'Facebook',
+    icon: FaFacebook, // Reference to the Facebook PNG icon
+    url: 'https://www.facebook.com/your-facebook-page', // Replace with the correct link
+  },
+  {
+    name: 'Instagram',
+    icon: FaInstagram, // Reference to the Instagram PNG icon
+    url: 'https://www.instagram.com/your-instagram-page', // Replace with the correct link
+  },
+];
+
+export { technologies, testimonials, socialLinks };

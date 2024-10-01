@@ -6,6 +6,9 @@ import bitcoin from "./tech/bitcoin.png";
 import Tether from "./tech/Tether.png";
 import Ether from "./tech/Ether.png";
 import Us from "./tech/Us.png";
+import FaFacebook from "./tech/FaFacebook.png";
+import FaWhatsapp from "./tech/FaWhatsapp.png";
+import FaInstagram from "./tech/FaInstagram.png";
 
 
 export {
@@ -16,4 +19,7 @@ export {
   Tether,
   Ether,
   Us,
+  FaWhatsapp, 
+  FaFacebook, 
+  FaInstagram,
 };
