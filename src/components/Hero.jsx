@@ -70,7 +70,7 @@ const Hero = () => {
         href="https://wa.me/1234567890" // Replace with your WhatsApp link
         target="_blank"
         rel="noopener noreferrer"
-        className="absolute bottom-8 right-8 bg-green-500 text-white p-4 rounded-full"
+        className="fixed z-10 bottom-8 right-8 bg-green-500 text-white p-4 rounded-full"
       >
         <img src='./public/images/WhatsApp.png' alt="WhatsApp" className="w-10 h-10" />
       </a>
