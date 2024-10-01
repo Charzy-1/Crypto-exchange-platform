@@ -25,7 +25,7 @@ const HowItWorks = () => {
       </div>
       <div className="lg:w-1/2 p-5">
         <img 
-          src="./public/images/BTC-removebg-preview.png" 
+          src="/images/BTC-removebg-preview.png" 
           alt="How it works" 
           className="w-full h-auto object-cover rounded-lg shadow-lg" 
         />
