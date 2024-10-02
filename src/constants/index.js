@@ -73,17 +73,17 @@ const socialLinks = [
   {
     name: 'WhatsApp',
     icon: FaWhatsapp, // Reference to the WhatsApp PNG icon
-    url: 'https://wa.me/your-whatsapp-number', // Replace with the correct link
+    url: 'https://api.whatsapp.com/send/?phone=%2B2348053188798&text&type=phone_number&app_absent=0', // Replace with the correct link
   },
   {
     name: 'Facebook',
     icon: FaFacebook, // Reference to the Facebook PNG icon
-    url: 'https://www.facebook.com/your-facebook-page', // Replace with the correct link
+    url: '#', // Replace with the correct link
   },
   {
     name: 'Instagram',
     icon: FaInstagram, // Reference to the Instagram PNG icon
-    url: 'https://www.instagram.com/your-instagram-page', // Replace with the correct link
+    url: 'https://www.instagram.com/tradewithleo0?igsh=MTAwemlhN3o3ZXg4cA==', // Replace with the correct link
   },
 ];
 

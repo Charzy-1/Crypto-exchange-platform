@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import { styles } from '../styles';
 import { BallCanvas } from "./canvas";
 import { technologies } from "../constants";
+import RegisterModal from './RegisterModal';  // Importing the reusable RegisterModal component
 
 const Hero = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);  // State for showing the modal
+
   return (
     <section className="relative w-full mx-auto pt-10 pb-20">
       {/* Background Image */}
@@ -11,7 +15,7 @@ const Hero = () => {
         style={{ backgroundImage: `url(/images/bacground.png)` }} 
       />
       {/* Dimming Overlay */}
-      <div className='absolute inset-0 bg-black opacity-60 h-full w-full' /> {/* Ensures overlay covers the entire section */}
+      <div className='absolute inset-0 bg-black opacity-60 h-full w-full' />
 
       {/* Content Container */}
       <div className={`${styles.paddingX} relative top-0 max-w-7xl mx-auto flex flex-col items-center text-center gap-5`}>
@@ -26,7 +30,7 @@ const Hero = () => {
         </p>
         <p className='text-white'>Supports 30+</p>
 
-        {/* Container for technology icons, using flexbox for layout */}
+        {/* Container for technology icons */}
         <div className="flex flex-row flex-wrap justify-center gap-5 mt-3 mb-2">
           {technologies.map((technology) => (
             <div className="w-28 h-28" key={technology.name}>
@@ -34,7 +38,14 @@ const Hero = () => {
             </div>
           ))}
         </div>
-      
+
+        {/* Register Button */}
+        <button 
+          onClick={() => setIsModalOpen(true)} 
+          className="bg-green-500 text-white px-5 py-3 rounded-lg shadow-lg hover:bg-green-600 transition duration-300">
+          Register
+        </button>
+
         {/* App Store Buttons */}
         <div className='flex flex-col sm:flex-row justify-center items-center gap-4 mt-5'>
           <a 
@@ -65,15 +76,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* WhatsApp Floating Icon */}
-      <a
-        href="https://wa.me/1234567890" // Replace with your WhatsApp link
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed z-10 bottom-8 right-8 bg-green-500 text-white p-4 rounded-full"
-      >
-        <img src='/images/WhatsApp.png' alt="WhatsApp" className="w-10 h-10" />
-      </a>
+      {/* Register Modal */}
+      <RegisterModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </section>
   );
 };
