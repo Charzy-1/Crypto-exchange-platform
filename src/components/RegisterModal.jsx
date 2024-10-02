@@ -29,7 +29,8 @@ const RegisterModal = ({ isModalOpen, setIsModalOpen }) => {
         {
           from_name: formData.name,      // User's name
           from_email: formData.email,    // User's email
-          phone: formData.phone,         // User's phone number
+          from_phone: formData.phone,         // User's phone number
+          to_name: "Leo'sExchange",
         },
         'UYJY9CIt5_gEcOhxC'  // Your EmailJS public key
       )
