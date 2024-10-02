@@ -40,6 +40,19 @@ const Navbar = () => {
     };
   }, [lastScrollY]);
 
+  const handleLinkClick = (nav) => {
+    setActive(nav.title);
+    if (nav.id === "home") {
+      window.scrollTo(0, 0); // Scroll to top when clicking Home
+    } else if (nav.id === "contact") {
+      document.getElementById("contact").scrollIntoView({ behavior: "smooth" }); // Scroll to contact section
+    } else if (nav.id === "rate") {
+      document.getElementById("rate").scrollIntoView({ behavior: "smooth" }); // Scroll to rate section
+    } else if (nav.id === "aboutus") {
+      document.getElementById("aboutus").scrollIntoView({ behavior: "smooth" }); // Scroll to how it works section
+    }
+  };
+
   return (
     <div
       className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 transition-transform duration-500 ${showNavbar ? 'translate-y-0' : '-translate-y-full'} ${navbarBackground ? 'bg-gray-500 bg-opacity-50 backdrop-blur-md' : 'bg-transparent'} transition-colors duration-500`}
@@ -61,27 +74,9 @@ const Navbar = () => {
               className={`${
                 active === nav.title ? 'text-white' : 'text-white'
               } hover:bg-green-500 hover:text-white text-[18px] font-medium cursor-pointer px-3 py-2 rounded-md transition-all duration-300`}
-              onClick={() => {
-                if (nav.id === "home") {
-                  setActive(nav.title);
-                  window.scrollTo(0, 0); // Scroll to top when clicking Home
-                } else if (nav.id === "contact") {
-                  setActive(nav.title);
-                  document.getElementById("contact").scrollIntoView({ behavior: "smooth" }); // Scroll to contact section
-                } else {
-                  setActive(nav.title);
-                }
-              }}
+              onClick={() => handleLinkClick(nav)}
             >
-              <Link to={nav.id === "home" ? "#" : (nav.id === "contact" ? "#" : `/${nav.id}`)} onClick={() => {
-                if (nav.id === "home") {
-                  setActive(nav.title);
-                  window.scrollTo(0, 0); // Scroll to top when clicking Home
-                } else if (nav.id === "contact") {
-                  setActive(nav.title);
-                  document.getElementById("contact").scrollIntoView({ behavior: "smooth" }); // Scroll to contact section
-                }
-              }}>
+              <Link to={nav.id === "home" ? "#" : (nav.id === "contact" ? "#" : `/${nav.id}`)}>
                 {nav.title}
               </Link>
             </li>
@@ -107,31 +102,9 @@ const Navbar = () => {
                   className={`${
                     active === nav.title ? 'text-white' : 'text-secondary'
                   } font-poppins font-medium cursor-pointer text-[16px]`}
-                  onClick={() => {
-                    if (nav.id === "home") {
-                      setActive(nav.title);
-                      window.scrollTo(0, 0); // Scroll to top when clicking Home
-                    } else if (nav.id === "contact") {
-                      setActive(nav.title);
-                      document.getElementById("contact").scrollIntoView({ behavior: "smooth" }); // Scroll to contact section
-                    } else {
-                      setToggle(false);
-                      setActive(nav.title);
-                    }
-                  }}
+                  onClick={() => handleLinkClick(nav)}
                 >
-                  <Link to={nav.id === "home" ? "#" : (nav.id === "contact" ? "#" : `/${nav.id}`)} onClick={() => {
-                    if (nav.id === "home") {
-                      setActive(nav.title);
-                      window.scrollTo(0, 0); // Scroll to top when clicking Home
-                    } else if (nav.id === "contact") {
-                      setActive(nav.title);
-                      document.getElementById("contact").scrollIntoView({ behavior: "smooth" }); // Scroll to contact section
-                    } else {
-                      setToggle(false);
-                      setActive(nav.title);
-                    }
-                  }}>
+                  <Link to={nav.id === "home" ? "#" : (nav.id === "contact" ? "#" : `/${nav.id}`)}>
                     {nav.title}
                   </Link>
                 </li>

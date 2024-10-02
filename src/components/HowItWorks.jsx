@@ -51,4 +51,4 @@ const HowItWorks = () => {
   );
 };
 
-export default SectionWrapper(HowItWorks, '');
+export default SectionWrapper(HowItWorks, 'howitworks');
