@@ -10,7 +10,7 @@ const TrustUsSection = () => {
         <section className="text-center">
           {/* Heading */}
           <h2 className='text-green-500 font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl'>
-            WHY TRADE WITH US?
+            FACTS ABOUT US?
           </h2>
           {/* Subheading */}
           <p className="text-lg text-gray-600 mb-10">
@@ -78,4 +78,4 @@ const TrustUsSection = () => {
     );
 };
 
-export default SectionWrapper(TrustUsSection, '');
+export default SectionWrapper(TrustUsSection, 'aboutus');
