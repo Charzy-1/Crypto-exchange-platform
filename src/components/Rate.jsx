@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Flag from 'react-world-flags'; // For country flags
-import { FaBitcoin, FaDollarSign } from 'react-icons/fa'; // For Bitcoin and USDT logos
+import { FaBitcoin, FaDollarSign, FaWhatsapp } from 'react-icons/fa'; // For Bitcoin, USDT logos, and WhatsApp icon
 import { SectionWrapper } from "../hoc";
 import axios from 'axios'; // Import axios for making HTTP requests
 
@@ -57,7 +57,7 @@ const Rate = () => {
       <h2 className="text-xl font-bold mb-4 flex items-center justify-center">
         <FaDollarSign className="mr-2" /> USDT Trading Rate
       </h2>
-      <table className="w-full text-left">
+      <table className="w-full text-left mb-8">
         <thead>
           <tr>
             <th className="border-b-2 p-2">COUNTRY</th>
@@ -78,6 +78,24 @@ const Rate = () => {
           ))}
         </tbody>
       </table>
+
+      {/* Additional Information */}
+      <div className="mt-6">
+        <p className="text-center">
+          Contact us on 
+          <a 
+            href="https://api.whatsapp.com/send/?phone=%2B2348053188798&text&type=phone_number&app_absent=0" // Replace with your actual phone number
+            className="text-green-500 flex items-center justify-center"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <FaWhatsapp className="ml-2" /> WhatsApp
+          </a> 
+          for rate of iTunes, Gift cards and other coins.
+        </p>
+        <br />
+        <p className="text-green-500">Thanks for trading with Leo.</p>
+      </div>
     </div>
   );
 };
