@@ -46,6 +46,8 @@ const Navbar = () => {
 
   const handleLinkClick = (nav) => {
     setActive(nav.title);
+    setToggle(false); // Close the menu when a link is clicked
+
     if (nav.id === "home") {
       window.scrollTo(0, 0); // Scroll to top when clicking Home
     } else if (nav.id === "contact") {
@@ -53,8 +55,13 @@ const Navbar = () => {
     } else if (nav.id === "rate") {
       document.getElementById("rate").scrollIntoView({ behavior: "smooth" }); // Scroll to rate section
     } else if (nav.id === "aboutus") {
-      document.getElementById("aboutus").scrollIntoView({ behavior: "smooth" }); // Scroll to how it works section
+      document.getElementById("aboutus").scrollIntoView({ behavior: "smooth" }); // Scroll to about section
     }
+  };
+
+  const handleAdminClick = () => {
+    setModalOpen(true); // Open the login modal
+    setToggle(false); // Close the hamburger menu
   };
 
   const handleLogin = () => {
@@ -82,10 +89,10 @@ const Navbar = () => {
               key={nav.id}
               className={`${
                 active === nav.title ? 'text-white' : 'text-white'
-              } hover:bg-green-500 hover:text-white text-[18px] font-medium cursor-pointer px-3 py-2 rounded-md transition-all duration-300`}
+              } hover:bg-green-500 hover:text-white text-[18px] font-medium cursor-pointer px-3 py-2 rounded-md`}
               onClick={() => handleLinkClick(nav)}
             >
-              <Link to={nav.id === "home" ? "#" : (nav.id === "contact" ? "#" : `/${nav.id}`)}>
+              <Link to={nav.id === "admin" ? "/admin" : "#"} onClick={() => handleLinkClick(nav)}>
                 {nav.title}
               </Link>
             </li>
@@ -93,7 +100,7 @@ const Navbar = () => {
           {/* Admin Button with Padlock Icon */}
           <li className="flex items-center">
             <button
-              onClick={() => setModalOpen(true)} // Open the login modal
+              onClick={handleAdminClick} // Use the new handler
               className="bg-red-500 flex items-center p-2 rounded-md"
             >
               <FaLock className="mr-2" /> Admin
@@ -122,7 +129,7 @@ const Navbar = () => {
                   } font-poppins font-medium cursor-pointer text-[16px]`}
                   onClick={() => handleLinkClick(nav)}
                 >
-                  <Link to={nav.id === "home" ? "#" : (nav.id === "contact" ? "#" : `/${nav.id}`)}>
+                  <Link to={nav.id === "admin" ? "/admin" : "#"} onClick={() => handleLinkClick(nav)}>
                     {nav.title}
                   </Link>
                 </li>
@@ -130,7 +137,7 @@ const Navbar = () => {
               {/* Admin Button for Mobile Menu */}
               <li className="flex items-center">
                 <button
-                  onClick={() => setModalOpen(true)} // Open the login modal
+                  onClick={handleAdminClick} // Use the new handler
                   className="bg-red-500 flex items-center p-2 rounded-md"
                 >
                   <FaLock className="mr-2" /> Admin
