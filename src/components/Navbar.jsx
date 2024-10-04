@@ -3,6 +3,8 @@ import { Link } from "react-router-dom"; // Use Link from react-router-dom
 import { styles } from '../styles';
 import { navLinks } from '../constants';
 import { logo, menu, close } from "../assets";
+import { FaLock } from 'react-icons/fa'; // Import padlock icon
+import LoginModal from './LoginModal'; // Import LoginModal component
 
 const Navbar = () => {
   const [active, setActive] = useState('');
@@ -10,6 +12,8 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showNavbar, setShowNavbar] = useState(true);
   const [navbarBackground, setNavbarBackground] = useState(false); // Track background change
+  const [isModalOpen, setModalOpen] = useState(false); // State for controlling modal visibility
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // State for admin login status
 
   // Handle navbar visibility and background color on scroll
   useEffect(() => {
@@ -23,7 +27,7 @@ const Navbar = () => {
         setShowNavbar(true);
       }
 
-      // Add grayscale background when not at the top
+      // Add background when not at the top
       if (currentScrollY > 0) {
         setNavbarBackground(true);
       } else {
@@ -42,6 +46,8 @@ const Navbar = () => {
 
   const handleLinkClick = (nav) => {
     setActive(nav.title);
+    setToggle(false); // Close the menu when a link is clicked
+
     if (nav.id === "home") {
       window.scrollTo(0, 0); // Scroll to top when clicking Home
     } else if (nav.id === "contact") {
@@ -49,8 +55,18 @@ const Navbar = () => {
     } else if (nav.id === "rate") {
       document.getElementById("rate").scrollIntoView({ behavior: "smooth" }); // Scroll to rate section
     } else if (nav.id === "aboutus") {
-      document.getElementById("aboutus").scrollIntoView({ behavior: "smooth" }); // Scroll to how it works section
+      document.getElementById("aboutus").scrollIntoView({ behavior: "smooth" }); // Scroll to about section
     }
+  };
+
+  const handleAdminClick = () => {
+    setModalOpen(true); // Open the login modal
+    setToggle(false); // Close the hamburger menu
+  };
+
+  const handleLogin = () => {
+    setIsLoggedIn(true); // Set admin as logged in
+    setModalOpen(false); // Close the modal
   };
 
   return (
@@ -73,14 +89,23 @@ const Navbar = () => {
               key={nav.id}
               className={`${
                 active === nav.title ? 'text-white' : 'text-white'
-              } hover:bg-green-500 hover:text-white text-[18px] font-medium cursor-pointer px-3 py-2 rounded-md transition-all duration-300`}
+              } hover:bg-green-500 hover:text-white text-[18px] font-medium cursor-pointer px-3 py-2 rounded-md`}
               onClick={() => handleLinkClick(nav)}
             >
-              <Link to={nav.id === "home" ? "#" : (nav.id === "contact" ? "#" : `/${nav.id}`)}>
+              <Link to={nav.id === "admin" ? "/admin" : "#"} onClick={() => handleLinkClick(nav)}>
                 {nav.title}
               </Link>
             </li>
           ))}
+          {/* Admin Button with Padlock Icon */}
+          <li className="flex items-center">
+            <button
+              onClick={handleAdminClick} // Use the new handler
+              className="bg-red-500 flex items-center p-2 rounded-md"
+            >
+              <FaLock className="mr-2" /> Admin
+            </button>
+          </li>
         </ul>
 
         {/* Mobile Menu */}
@@ -104,15 +129,27 @@ const Navbar = () => {
                   } font-poppins font-medium cursor-pointer text-[16px]`}
                   onClick={() => handleLinkClick(nav)}
                 >
-                  <Link to={nav.id === "home" ? "#" : (nav.id === "contact" ? "#" : `/${nav.id}`)}>
+                  <Link to={nav.id === "admin" ? "/admin" : "#"} onClick={() => handleLinkClick(nav)}>
                     {nav.title}
                   </Link>
                 </li>
               ))}
+              {/* Admin Button for Mobile Menu */}
+              <li className="flex items-center">
+                <button
+                  onClick={handleAdminClick} // Use the new handler
+                  className="bg-red-500 flex items-center p-2 rounded-md"
+                >
+                  <FaLock className="mr-2" /> Admin
+                </button>
+              </li>
             </ul>
           </div>
         </div>
       </div>
+      
+      {/* Login Modal */}
+      <LoginModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} onLogin={handleLogin} />
     </div>
   );
 };
