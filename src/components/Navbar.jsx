@@ -3,6 +3,8 @@ import { Link } from "react-router-dom"; // Use Link from react-router-dom
 import { styles } from '../styles';
 import { navLinks } from '../constants';
 import { logo, menu, close } from "../assets";
+import { FaLock } from 'react-icons/fa'; // Import padlock icon
+import LoginModal from './LoginModal'; // Import LoginModal component
 
 const Navbar = () => {
   const [active, setActive] = useState('');
@@ -10,6 +12,8 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showNavbar, setShowNavbar] = useState(true);
   const [navbarBackground, setNavbarBackground] = useState(false); // Track background change
+  const [isModalOpen, setModalOpen] = useState(false); // State for controlling modal visibility
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // State for admin login status
 
   // Handle navbar visibility and background color on scroll
   useEffect(() => {
@@ -23,7 +27,7 @@ const Navbar = () => {
         setShowNavbar(true);
       }
 
-      // Add grayscale background when not at the top
+      // Add background when not at the top
       if (currentScrollY > 0) {
         setNavbarBackground(true);
       } else {
@@ -51,6 +55,11 @@ const Navbar = () => {
     } else if (nav.id === "aboutus") {
       document.getElementById("aboutus").scrollIntoView({ behavior: "smooth" }); // Scroll to how it works section
     }
+  };
+
+  const handleLogin = () => {
+    setIsLoggedIn(true); // Set admin as logged in
+    setModalOpen(false); // Close the modal
   };
 
   return (
@@ -81,6 +90,15 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
+          {/* Admin Button with Padlock Icon */}
+          <li className="flex items-center">
+            <button
+              onClick={() => setModalOpen(true)} // Open the login modal
+              className="bg-red-500 flex items-center p-2 rounded-md"
+            >
+              <FaLock className="mr-2" /> Admin
+            </button>
+          </li>
         </ul>
 
         {/* Mobile Menu */}
@@ -109,10 +127,22 @@ const Navbar = () => {
                   </Link>
                 </li>
               ))}
+              {/* Admin Button for Mobile Menu */}
+              <li className="flex items-center">
+                <button
+                  onClick={() => setModalOpen(true)} // Open the login modal
+                  className="bg-red-500 flex items-center p-2 rounded-md"
+                >
+                  <FaLock className="mr-2" /> Admin
+                </button>
+              </li>
             </ul>
           </div>
         </div>
       </div>
+      
+      {/* Login Modal */}
+      <LoginModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} onLogin={handleLogin} />
     </div>
   );
 };
