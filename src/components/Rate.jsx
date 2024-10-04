@@ -1,22 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Flag from 'react-world-flags'; // For country flags
 import { FaBitcoin, FaDollarSign } from 'react-icons/fa'; // For Bitcoin and USDT logos
 import { SectionWrapper } from "../hoc";
+import axios from 'axios'; // Import axios for making HTTP requests
 
 const Rate = () => {
-  const rates = [
-    { country: 'Nigeria', code: 'NG', buy: '₦1,655', sell: '₦1,695' },
-    { country: 'South Africa', code: 'ZA', buy: 'ZAR16.8', sell: 'ZAR18.0' },
-    { country: 'United Kingdom', code: 'GB', buy: '-7%', sell: '+10%' },
-    { country: 'Turkey', code: 'TR', buy: '5%', sell: '7%' },
-  ];
+  const [btcRates, setBtcRates] = useState([]); // State for BTC rates
+  const [usdtRates, setUsdtRates] = useState([]); // State for USDT rates
 
-  const usdtRates = [
-    { country: 'Nigeria', code: 'NG', buy: '₦750', sell: '₦765' },
-    { country: 'South Africa', code: 'ZA', buy: 'ZAR13.5', sell: 'ZAR14.2' },
-    { country: 'United Kingdom', code: 'GB', buy: '-2%', sell: '+4%' },
-    { country: 'Turkey', code: 'TR', buy: '6%', sell: '8%' },
-  ];
+  useEffect(() => {
+    // Fetch current rates
+    const fetchRates = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/rates'); // Fetch rates from your API
+        const btcData = response.data.filter(rate => rate.type === 'btc'); // Filter for BTC rates
+        const usdtData = response.data.filter(rate => rate.type === 'usdt'); // Filter for USDT rates
+        setBtcRates(btcData); // Update state for BTC rates
+        setUsdtRates(usdtData); // Update state for USDT rates
+      } catch (error) {
+        console.error("Error fetching rates:", error); // Handle any errors
+      }
+    };
+
+    fetchRates(); // Call the function to fetch rates
+  }, []); // Run once on component mount
 
   return (
     <div className="p-6 bg-white rounded-lg shadow-md text-center">
@@ -33,10 +40,10 @@ const Rate = () => {
           </tr>
         </thead>
         <tbody>
-          {rates.map((rate, index) => (
+          {btcRates.map((rate, index) => (
             <tr key={index}>
               <td className="p-2 flex items-center">
-                <Flag code={rate.code} className="w-6 h-6 mr-2" />
+                <Flag code={rate.code} className="w-6 h-6 mr-2" /> {/* Add flag beside country name */}
                 {rate.country}
               </td>
               <td className="p-2">{rate.buy}</td>
@@ -62,7 +69,7 @@ const Rate = () => {
           {usdtRates.map((rate, index) => (
             <tr key={index}>
               <td className="p-2 flex items-center">
-                <Flag code={rate.code} className="w-6 h-6 mr-2" />
+                <Flag code={rate.code} className="w-6 h-6 mr-2" /> {/* Add flag beside country name */}
                 {rate.country}
               </td>
               <td className="p-2">{rate.buy}</td>

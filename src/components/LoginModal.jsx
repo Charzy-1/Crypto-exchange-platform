@@ -39,7 +39,7 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
       className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 modal-overlay"
       onClick={handleOutsideClick} // Handle outside click to close
     >
-      <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full relative mt-80"> {/* Adjusted mt-20 for spacing */}
+      <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full relative mx-4 mt-80 sm:mx-0 sm:mt840"> {/* Added mx-4 for horizontal margin */}
         <button
           className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
           onClick={handleCloseClick} // Close modal when X is clicked
@@ -68,7 +68,7 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
               required
             />
           </div>
-          <button type="submit" className="bg-blue-500 text-white p-2">Login</button>
+          <button type="submit" className="bg-green-500 text-white p-2">Login</button>
         </form>
       </div>
     </div>
