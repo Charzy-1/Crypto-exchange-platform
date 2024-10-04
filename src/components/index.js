@@ -7,6 +7,8 @@ import HowItWorks from './HowItWorks';
 import Admin from './Admin';
 import Rate from './Rate';
 import Contact from './Contact';
+import TermsAndConditions from './TermsAndConditions';
+import PrivacyPolicy from './PrivacyPolicy';
 import Footer from './Footer';
 
 
@@ -20,5 +22,8 @@ export {
   Admin,
   Contact,
   BallCanvas,
+  TermsAndConditions,
+  PrivacyPolicy,
+
   Footer,
 }

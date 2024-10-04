@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"; // Import Routes and Route
-import { TrustUsSection, Feedbacks, Hero, Navbar, HowItWorks, Rate, Admin, Contact, Footer } from "./components";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Hero, Admin, TrustUsSection, Feedbacks, Navbar, HowItWorks, Rate, Contact, Footer, TermsAndConditions, PrivacyPolicy } from "./components"; // Import new components
 
 const App = () => {
   return (
@@ -26,6 +26,8 @@ const App = () => {
         
         {/* Admin route */}
         <Route path="/admin" element={<Admin />} /> {/* Admin section */}
+        <Route path="/terms" element={<TermsAndConditions />} /> {/* Terms and Conditions page */}
+        <Route path="/privacy" element={<PrivacyPolicy />} /> {/* Privacy Policy page */}
       </Routes>
     </BrowserRouter>
   )
