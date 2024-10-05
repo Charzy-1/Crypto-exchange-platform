@@ -46,7 +46,6 @@ const technologies = [
   },
 ];
 
-
 const testimonials = [
   {
     testimonial:
@@ -76,15 +75,30 @@ const socialLinks = [
     url: 'https://api.whatsapp.com/send/?phone=%2B2348053188798&text&type=phone_number&app_absent=0', // Replace with the correct link
   },
   {
-    name: 'Facebook',
-    icon: FaFacebook, // Reference to the Facebook PNG icon
-    url: '#', // Replace with the correct link
-  },
-  {
     name: 'Instagram',
     icon: FaInstagram, // Reference to the Instagram PNG icon
     url: 'https://www.instagram.com/tradewithleo0?igsh=MTAwemlhN3o3ZXg4cA==', // Replace with the correct link
   },
 ];
 
-export { technologies, testimonials, socialLinks };
+// faqData.js
+const faqData = [
+  {
+    question: "Are You A Registered Company?",
+    answer: "Yes, we are registered as an LLC with the Corporate Affairs Commission (CAC) with company registration number 7918301."
+  },
+  {
+    question: "How long does it take to complete a transaction?",
+    answer: "Generally, transactions are finished in 5 to 15 minutes, though this can vary based on a number of circumstances, including network congestion."
+  },
+  {
+    question: "What is the minimum amoun of cryptocurrency i can sell on your app?",
+    answer: "You can sell as little as $10 worth of cryptocurrencies on our app."
+  },
+  {
+    question: "How Can I Contact Support?",
+    answer: "You can contact support via telegram and watsapp by clicking any of these icon on the webpage or visit our contact section"
+  },
+];
+
+export { technologies, testimonials, socialLinks, faqData };

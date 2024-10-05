@@ -8,8 +8,8 @@ const Admin = () => {
   const [errors, setErrors] = useState({ country: "", buy: "", sell: "" }); // State for error messages
 
   useEffect(() => {
-    // Fetch current rates
-    axios.get("http://localhost:5000/api/rates")
+    // Fetch current rates from live backend
+    axios.get("https://crypto-backend-3k2b.onrender.com/api/rates")
       .then(response => setRates(response.data))
       .catch(error => console.error("Error fetching rates", error));
   }, []);
@@ -39,7 +39,8 @@ const Admin = () => {
       return; // Exit the function if there are validation errors
     }
 
-    axios.post("http://localhost:5000/api/rates/update", formData)
+    // Post updated rates to live backend
+    axios.post("https://crypto-backend-3k2b.onrender.com/api/rates/update", formData)
       .then(response => {
         console.log("Updated rate", response.data);
         // Update rates and clear the form

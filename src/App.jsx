@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Hero, Admin, TrustUsSection, Feedbacks, Navbar, HowItWorks, Rate, Contact, Footer, TermsAndConditions, PrivacyPolicy } from "./components"; // Import new components
+import { Hero, Admin, TrustUsSection, Feedbacks, Navbar, HowItWorks, FAQ, Rate, Contact, Footer, TermsAndConditions, PrivacyPolicy } from "./components"; // Import new components
 
 const App = () => {
   return (
@@ -18,6 +18,7 @@ const App = () => {
               <Rate />
               <Feedbacks />
               <HowItWorks />
+              <FAQ />
               <Contact />
               <Footer />
             </div>

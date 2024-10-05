@@ -14,16 +14,20 @@ const HowItWorks = () => {
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">How it works</h2>
           <ol className="space-y-6 text-lg">
             <li>
-              <span className="font-semibold">1. Log into your Account</span><br />
-              <span className="text-gray-600">The most secure way to sell your Bitcoin!</span>
+              <span className="font-semibold">1. Register with us</span><br />
+              <span className="text-gray-600">Click on the register button and enter your details to receive real-time rate updates, emails, and important, notifications directly from Leo’s Exchange.</span>
             </li>
             <li>
-              <span className="font-semibold">2. Copy our wallet address</span><br />
-              <span className="text-gray-600">The most secure way to sell your Bitcoin!</span>
+              <span className="font-semibold">2. Join Our Telegram Channel</span><br />
+              <span className="text-gray-600">Stay ahead with our latest rate updates and valuable insights by joining our active Telegram community.</span>
             </li>
             <li>
-              <span className="font-semibold">3. Send coins and upload proof</span><br />
-              <span className="text-gray-600">The most secure way to sell your Bitcoin!</span>
+              <span className="font-semibold">3. Follow Us on Social Media</span><br />
+              <span className="text-gray-600">Get instant updates by following all our social media platforms, ensuring you never miss out on important announcements and offers.</span>
+            </li>
+            <li>
+              <span className="font-semibold">3. Contact Us on WhatsApp or Telegram for any trade</span><br />
+              <span className="text-gray-600">Reach out to us via WhatsApp or Telegram. By doing so, you’ll be added to our contact list and get regular updates from us.</span>
             </li>
           </ol>
         </div>

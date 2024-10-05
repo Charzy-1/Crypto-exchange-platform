@@ -3,6 +3,7 @@ import { styles } from '../styles';
 import { BallCanvas } from "./canvas";
 import { technologies } from "../constants";
 import RegisterModal from './RegisterModal';  // Importing the reusable RegisterModal component
+import { FaWhatsapp, FaTelegramPlane } from 'react-icons/fa';  // Importing icons
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);  // State for showing the modal
@@ -78,6 +79,27 @@ const Hero = () => {
 
       {/* Register Modal */}
       <RegisterModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+
+      {/* Floating WhatsApp and Telegram buttons */}
+      <div className="fixed bottom-4 right-4 flex flex-col gap-4 z-50">
+        <a 
+          href="https://api.whatsapp.com/send/?phone=%2B2348053188798&text&type=phone_number&app_absent=0" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center"
+        >
+          <FaWhatsapp className="w-6 h-6" />
+        </a>
+
+        <a 
+          href="https://t.me/+EGexcnohVLgzNGVk" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition duration-300 flex items-center justify-center"
+        >
+          <FaTelegramPlane className="w-6 h-6" />
+        </a>
+      </div>
     </section>
   );
 };

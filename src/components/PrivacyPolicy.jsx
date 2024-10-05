@@ -9,7 +9,7 @@ const PrivacyPolicy = () => {
         <h2 className="text-2xl font-bold mb-4 text-center">Privacy Policy</h2>
       <p className='text-2xl font-bold mb-4'>INTRODUCTION</p>
       <p>
-        This site is owned and operated by Velox (“the Company”) with its website located at ‘Velox.com.ng’ (“the Website”). The Company provides various services, including but not limited to the buying and selling of cryptocurrencies. Your privacy on the Internet is of the utmost importance to us.
+        This site is owned and operated by Leosexchange (“tCompany”) with its website located at ‘Leosexchange.com’ (“the Website”). The Company provides various services, including but not limited to the buying and selling of cryptocurrencies. Your privacy on the Internet is of the utmost importance to us.
       </p>
       <p>
         We will never share your personal information with any third party, but because we may gather certain types of information about our users, we feel you should fully understand our policy and the terms and conditions surrounding the capture and use of that information. This privacy statement discloses what information we gather and how we use it. The private information you provide on the Website will be used only for its intended purpose.
@@ -104,7 +104,7 @@ const PrivacyPolicy = () => {
         </h2>
 
         <p>
-            The Company respects your privacy and gives you an opportunity to opt-out of receiving information in respect of the Services by contacting us at theofficialvelox@gmail.com.
+            The Company respects your privacy and gives you an opportunity to opt-out of receiving information in respect of the Services by contacting us at theofficialLeosexchange@gmacom.
         </p>
 
         <h2 className="text-2xl font-bold mt-4 mb-4">
