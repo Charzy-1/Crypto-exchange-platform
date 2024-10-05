@@ -4,12 +4,12 @@ import Flag from 'react-world-flags'; // Import the Flag component
 
 const Admin = () => {
   const [rates, setRates] = useState([]);
-  const [formData, setFormData] = useState({ country: "", buy: "", sell: "", type: "btc" });
+  const [formData, setFormData] = useState({ country: "", code: "", buy: "", sell: "", type: "btc" });
   const [errors, setErrors] = useState({ country: "", buy: "", sell: "" }); // State for error messages
 
   useEffect(() => {
     // Fetch current rates from live backend
-    axios.get("https://crypto-backend-98c3cmmu2-charzys-projects-383bef16.vercel.app")
+    axios.get("https://crypto-backend-98c3cmmu2-charzys-projects-383bef16.vercel.app/api/rates")
       .then(response => setRates(response.data))
       .catch(error => console.error("Error fetching rates", error));
   }, []);
@@ -27,6 +27,9 @@ const Admin = () => {
     if (!formData.country) {
       validationErrors.country = 'Country is required!';
     }
+    if (!formData.code) {
+      validationErrors.code = 'Code is required!'; // New validation for code
+    }
     if (!formData.buy) {
       validationErrors.buy = 'Buy price is required!';
     }
@@ -40,12 +43,12 @@ const Admin = () => {
     }
 
     // Post updated rates to live backend
-    axios.post("https://crypto-backend-98c3cmmu2-charzys-projects-383bef16.vercel.app", formData)
+    axios.post("https://crypto-backend-98c3cmmu2-charzys-projects-383bef16.vercel.app/api/rates/update", formData)
       .then(response => {
         console.log("Updated rate", response.data);
         // Update rates and clear the form
         setRates([...rates.filter(r => r.country !== response.data.country || r.type !== response.data.type), response.data]);
-        setFormData({ country: "", buy: "", sell: "", type: "btc" }); // Clear the form
+        setFormData({ country: "", code: "", buy: "", sell: "", type: "btc" }); // Clear the form
       })
       .catch(error => console.error("Error updating rate", error));
   };
@@ -69,6 +72,17 @@ const Admin = () => {
             className="border border-gray-300 rounded-lg p-2 w-full focus:outline-none focus:ring focus:ring-green-300 transition duration-200"
           />
           {errors.country && <p className="text-red-500">{errors.country}</p>} {/* Display error message for country */}
+        </div>
+        <div className="mb-4">
+          <label className="block font-medium">Code:</label> {/* New field for country code */}
+          <input
+            type="text"
+            name="code"
+            value={formData.code}
+            onChange={handleChange}
+            className="border border-gray-300 rounded-lg p-2 w-full focus:outline-none focus:ring focus:ring-green-300 transition duration-200"
+          />
+          {errors.code && <p className="text-red-500">{errors.code}</p>} {/* Display error message for code */}
         </div>
         <div className="mb-4">
           <label className="block font-medium">Buy Price:</label>
