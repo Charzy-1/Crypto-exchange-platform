@@ -6,10 +6,12 @@ import TrustUsSection from './TrustUsSection';
 import HowItWorks from './HowItWorks';
 import Admin from './Admin';
 import Rate from './Rate';
+import FAQ from './FAQ';
 import Contact from './Contact';
 import TermsAndConditions from './TermsAndConditions';
 import PrivacyPolicy from './PrivacyPolicy';
 import Footer from './Footer';
+
 
 
 export {
@@ -21,9 +23,9 @@ export {
   Rate,
   Admin,
   Contact,
+  FAQ,
   BallCanvas,
   TermsAndConditions,
   PrivacyPolicy,
-
   Footer,
 }

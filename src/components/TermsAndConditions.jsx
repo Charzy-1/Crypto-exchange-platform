@@ -9,7 +9,7 @@ const TermsAndConditions = () => {
         <h2 className="text-2xl font-bold mb-4 text-center">TERMS OF SERVICE</h2>
       <p className='text-2xl font-bold mb-4'>INTRODUCTION</p>
       <p>
-         you for engaging our services and/or placing an order with ‘Velox.com.ng ’ (“Website”), a site operated by VELOX (“the Company”).By placing an order, clicking to accept this Agreement or using and/or accessing any of the Company or related services, you agree to all the terms and conditions of the Agreement. <br /><br />
+         you for engaging our services and/or placing an order with Leosexchange.com.ng ’ (“Website”), a site operated by LEOSEXCHANGE (“the Company”).By placing an order, clicking to accept this Agreement or using and/or accessing any of the Company or related services, you agree to all the terms and conditions of the Agreement. <br /><br />
 
         If you are using or ordering the Company’s service(s) or related service(s) on behalf of a Company or other entity, then “Customer” or “You” means that entity, and you are binding that entity to the Agreement.<br /><br />
 
