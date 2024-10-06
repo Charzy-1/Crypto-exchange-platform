@@ -9,7 +9,7 @@ const Admin = () => {
 
   useEffect(() => {
     // Fetch current rates from live backend
-    axios.get("https://crypto-backend-98c3cmmu2-charzys-projects-383bef16.vercel.app")
+    axios.get("https://crypto-backend-3k2b.onrender.com")
       .then(response => setRates(response.data))
       .catch(error => console.error("Error fetching rates", error));
   }, []);
@@ -40,7 +40,7 @@ const Admin = () => {
     }
 
     // Post updated rates to live backend
-    axios.post("https://crypto-backend-98c3cmmu2-charzys-projects-383bef16.vercel.app/api/rates/update", formData)
+    axios.post("https://crypto-backend-3k2b.onrender.com/api/rates/update", formData)
       .then(response => {
         console.log("Updated rate", response.data);
         // Update rates and clear the form
