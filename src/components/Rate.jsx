@@ -12,7 +12,7 @@ const Rate = () => {
     // Fetch current rates
     const fetchRates = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/rates'); // Fetch rates from your API
+        const response = await axios.get('https://crypto-backend-3k2b.onrender.com/api/rates'); // Fetch rates from your API
         const btcData = response.data.filter(rate => rate.type === 'btc'); // Filter for BTC rates
         const usdtData = response.data.filter(rate => rate.type === 'usdt'); // Filter for USDT rates
         setBtcRates(btcData); // Update state for BTC rates
