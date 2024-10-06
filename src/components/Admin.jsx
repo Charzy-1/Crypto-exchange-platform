@@ -50,6 +50,16 @@ const Admin = () => {
       .catch(error => console.error("Error updating rate", error));
   };
 
+  const handleDelete = (rateId) => {
+    // Send delete request to backend
+    axios.delete(`https://crypto-backend-3k2b.onrender.com/api/rates/${rateId}`)
+      .then(() => {
+        // Remove the deleted rate from the state
+        setRates(rates.filter(rate => rate._id !== rateId));
+      })
+      .catch(error => console.error("Error deleting rate", error));
+  };
+
   return (
     <div className="p-8">
       <h2 className="text-2xl font-bold mb-6 text-center text-green-600">Admin: Update Coin Rates</h2>
@@ -116,6 +126,7 @@ const Admin = () => {
               <th className="border-b-2 p-2">BUY</th>
               <th className="border-b-2 p-2">SELL</th>
               <th className="border-b-2 p-2">TYPE</th>
+              <th className="border-b-2 p-2">ACTIONS</th> {/* New column for actions */}
             </tr>
           </thead>
           <tbody>
@@ -128,6 +139,14 @@ const Admin = () => {
                 <td className="p-2">{rate.buy}</td>
                 <td className="p-2">{rate.sell}</td>
                 <td className="p-2">{rate.type.toUpperCase()}</td>
+                <td className="p-2">
+                  <button 
+                    onClick={() => handleDelete(rate._id)} // Call the delete handler with the rate ID
+                    className="bg-red-500 text-white p-2 rounded hover:bg-red-600 transition duration-200"
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
