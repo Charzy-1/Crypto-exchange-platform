@@ -23,7 +23,7 @@ const Hero = () => {
         
         {/* Hero Text */}
         <h1 className='text-white font-bold text-[70px] sm:text-[50px] xs:text-[40px] leading-tight sm:leading-none pt-20'>
-          Fast and Trusted
+          Fast, Trusted and Reliable
         </h1>
 
         <p className='text-white text-[24px] max-w-xl lg:max-w-4xl'>
